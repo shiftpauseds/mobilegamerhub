@@ -1,0 +1,20 @@
+* {margin:0;padding:0;box-sizing:border-box}
+body {background:#000;color:#e0b3ff;font-family:'Roboto Mono',monospace;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;position:relative;overflow-x:hidden}
+.orb {position:fixed;bottom:-10%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,#c462fb,#ff69b4,#ff1493);border-radius:50%;opacity:.6;filter:blur(100px);z-index:0;animation:pulse 8s infinite alternate}
+@keyframes pulse {0%{transform:scale(.9);opacity:.5}100%{transform:scale(1.1);opacity:.7}}
+.container {max-width:420px;width:100%;text-align:center;z-index:10}
+header h1 {font-size:3.5rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:#c462fb;text-shadow:0 0 20px rgba(196,98,251,.8);margin-bottom:.5rem}
+.tagline {text-transform:uppercase;letter-spacing:.3em;font-size:.8rem;color:#d8b4ff;margin-bottom:3rem;opacity:.9}
+.buttons {display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:4rem}
+.btn {display:flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem 1.5rem;border:2px solid #c462fb;color:#e0b3ff;text-decoration:none;text-transform:uppercase;font-weight:600;letter-spacing:.1em;border-radius:8px;transition:all .3s;position:relative;overflow:hidden}
+.btn span {font-size:1.8rem;font-weight:bold}
+.btn:hover {background:#c462fb;color:#000;box-shadow:0 0 30px rgba(196,98,251,.6);transform:translateY(-3px)}
+footer {display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.9rem;color:#c462fb}
+footer svg {width:20px;height:20px}
+footer a {color:#e0b3ff;text-decoration:none}
+footer a:hover {text-decoration:underline;color:#fff}
+@media (max-width:480px){
+  header h1 {font-size:2.8rem}
+  .buttons {grid-template-columns:1fr}
+  .orb {width:300px;height:300px;bottom:-20%;right:-30%}
+}
