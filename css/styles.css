@@ -13,3 +13,7 @@ footer svg{width:20px;height:20px}
 footer a{color:#e0b3ff;text-decoration:none}
 footer a:hover{text-decoration:underline;color:#fff}
 @media (max-width:480px){header h1{font-size:2.8rem}.buttons{grid-template-columns:1fr}.orb{width:300px;height:300px;bottom:-20%;right:-30%}}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
