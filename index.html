@@ -8,53 +8,36 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    .nav{font-family:'Roboto Mono';font-size:0.95rem;letter-spacing:0.3em;position:fixed;top:2rem;left:2rem;z-index:99}
-    .nav a{color:#c462fb;text-decoration:none;margin-right:2.5rem;text-shadow:0 0 15px #c462fb;opacity:0.9}
-    .nav a:hover{opacity:1;text-shadow:0 0 25px #ff69b4}
-    .hero{text-align:center;padding-top:18vh}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#000;color:#fff;font-family:'Roboto Mono',monospace;overflow-x:hidden}
+    .orb{position:fixed;bottom:-10%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,#c462fb,#ff69b4,#ff1493);border-radius:50%;opacity:.6;filter:blur(100px);z-index:-1;animation:p 8s infinite alternate}
+    @keyframes p{0%{transform:scale(.9)}100%{transform:scale(1.1)}}
+    .nav{position:fixed;top:1rem;left:1rem;z-index:99;font-size:0.75rem;letter-spacing:0.25em}
+    .nav a{color:#c462fb;text-decoration:none;margin-right:1.2rem;text-shadow:0 0 10px #c462fb}
+    .nav a:hover{opacity:1;text-shadow:0 0 20px #ff69b4}
+    .hero{text-align:center;padding:15vh 1rem 10vh}
     .hero h1{
-      font-family:'Orbitron',sans-serif;
-      font-weight:900;
-      font-size:5.8rem;
+      font-family:'Orbitron',sans-serif;font-weight:900;
+      font-size:clamp(2.8rem, 12vw, 6rem);
       line-height:1;
       background:linear-gradient(90deg,#ff69b4,#c462fb,#ff1493);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      text-shadow:0 0 60px #c462fb;
-      margin:0
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      text-shadow:0 0 60px #c462fb;margin:0
     }
-    .tagline{
-      font-family:'Roboto Mono';
-      font-size:1.1rem;
-      letter-spacing:0.55em;
-      color:#d8b4ff;
-      margin:2rem 0 5rem;
-      text-shadow:0 0 20px #c462fb
-    }
+    .tagline{font-size:clamp(0.8rem, 3vw, 1.1rem);letter-spacing:0.5em;color:#d8b4ff;margin:2rem 0 4rem;text-shadow:0 0 15px #c462fb}
     .btn{
-      font-family:'Roboto Mono';
-      font-weight:700;
-      font-size:1.4rem;
-      letter-spacing:0.2em;
-      padding:1.4rem 4.5rem;
-      border:3px solid #c462fb;
-      color:#fff;
-      background:#000;
-      border-radius:12px;
-      box-shadow:0 0 40px #c462fb;
-      transition:all .3s
+      display:inline-block;font-weight:700;
+      font-size:clamp(1rem, 4vw, 1.4rem);letter-spacing:0.2em;
+      padding:1rem 3rem;border:3px solid #c462fb;color:#fff;background:#000;
+      border-radius:12px;box-shadow:0 0 40px #c462fb;transition:all .3s
     }
-    .btn:hover{
-      background:#c462fb;
-      color:#000;
-      box-shadow:0 0 60px #ff69b4;
-      transform:translateY(-5px)
-    }
-    footer{
-      text-align:center;
-      padding:4rem 0 3rem;
-      font-size:1rem;
-      color:#c462fb
+    .btn:hover{background:#c462fb;color:#000;box-shadow:0 0 60px #ff69b4;transform:translateY(-5px)}
+    footer{text-align:center;padding:3rem 1rem;font-size:0.9rem;color:#c462fb}
+    footer svg{width:18px;height:18px;vertical-align:middle}
+    @media (max-width:480px){
+      .nav{font-size:0.65rem;top:0.8rem;left:0.8rem}
+      .nav a{margin-right:1rem}
+      .hero{padding-top:12vh}
     }
   </style>
 </head>
@@ -77,10 +60,10 @@
 
   <!-- FOOTER -->
   <footer>
-    <svg width="20" height="20" fill="#c462fb" viewBox="0 0 24 24" style="vertical-align:middle">
+    <svg fill="#c462fb" viewBox="0 0 24 24">
       <path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5zM7.75 3.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5a4.25 4.25 0 0 1-4.25 4.25h-8.5A4.25 4.25 0 0 1 3.5 16.25v-8.5A4.25 4.25 0 0 1 7.75 3.5zm4.25 3a4.25 4.25 0 1 0 0 8.5 4.25 4.25 0 0 0 0-8.5zm0 1.5a2.75 2.75 0 1 1 0 5.5 2.75 2.75 0 0 1 0-5.5zm3.75-.88a1.02 1.02 0 1 0 0 2.04 1.02 1.02 0 0 0 0-2.04z"/>
     </svg>
-    <a href="https://instagram.com/mobilegamerhub" target="_blank" style="color:#e0b3ff;margin-left:10px">@mobilegamerhub</a>
+    <a href="https://instagram.com/mobilegamerhub" target="_blank" style="color:#e0b3ff;margin-left:8px">@mobilegamerhub</a>
   </footer>
 </body>
 </html>
