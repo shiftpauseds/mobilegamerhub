@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog - Mobile Gamer Hub</title>
+  <meta name="description" content="Neon mobile gaming blog from Manila. Best premium & free games 2025, no-BS reviews, global rankings. USA, PH, SEA gamers welcome." />
+  <meta property="og:title" content="Mobile Gamer Hub Blog - Neon Gaming 2025" />
+  <meta property="og:description" content="Real talk, real games. No ads. No paywalls. Just pure mobile fire." />
+  <meta property="og:url" content="https://mobilegamerhub.online/blog/" />
+  <link rel="canonical" href="https://mobilegamerhub.online/blog/" />
+  
+  <!-- Neon fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #00d4ff;
+      --dark: #0a0e1a;
+      --gray: #1e293b;
+      --accent: #ff2e63;
+      --light: #f1f5f9;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark);
+      color: #e2e8f0;
+      line-height: 1.7;
+      background-image: radial-gradient(circle at 10% 20%, rgba(0,212,255,0.1) 0%, transparent 20%),
+                        radial-gradient(circle at 90% 80%, rgba(255,46,99,0.1) 0%, transparent 20%);
+    }
+    header {
+      background: linear-gradient(135deg, var(--dark), var(--gray));
+      padding: 2rem 0;
+      text-align: center;
+      border-bottom: 5px solid var(--primary);
+      box-shadow: 0 10px 30px rgba(0,212,255,0.2);
+    }
+    .logo {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 4rem;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+      letter-spacing: 3px;
+    }
+    nav a {
+      color: #94a3b8;
+      margin: 0 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    nav a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
+    .container { max-width: 1000px; margin: 3rem auto; padding: 0 1rem; }
+    .hero-title {
+      text-align: center;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 3.5rem;
+      background: linear-gradient(90deg, var(--primary), #7dd3fc, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 2rem 0;
+      text-shadow: 0 0 20px rgba(0,212,255,0.3);
+    }
+    .hero-subtitle {
+      text-align: center;
+      font-size: 1.3rem;
+      color: #94a3b8;
+      margin: 1.5rem 0 3rem;
+    }
+    .post-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .post-card {
+      background: rgba(30, 41, 59, 0.7);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      transition: all 0.4s;
+      border: 1px solid rgba(0,212,255,0.3);
+    }
+    .post-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 50px rgba(0,212,255,0.4);
+      border-color: var(--primary);
+    }
+    .post-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .post-card:hover .post-img { transform: scale(1.05); }
+    .post-body {
+      padding: 1.5rem;
+    }
+    .post-tag {
+      background: var(--accent);
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      display: inline-block;
+      margin-bottom: 0.8rem;
+    }
+    .post-title {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin: 0.5rem 0;
+      line-height: 1.3;
+    }
+    .post-excerpt { color: #cbd5e1; font-size: 0.95rem; }
+    .read-more {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: all 0.3s;
+    }
+    .read-more:hover { 
+      text-shadow: 0 0 10px var(--primary);
+      transform: translateX(5px);
+    }
+    .cta-big {
+      text-align: center;
+      margin: 4rem 0;
+      padding: 3rem;
+      background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(255,46,99,0.1));
+      border-radius: 20px;
+      border: 2px dashed var(--primary);
+    }
+    .btn-neon {
+      background: linear-gradient(135deg, var(--primary), #00b0d4);
+      color: white;
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      box-shadow: 0 0 30px rgba(0,212,255,0.6);
+      display: inline-block;
+      margin-top: 1.5rem;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 30px rgba(0,212,255,0.6); }
+      50% { box-shadow: 0 0 50px rgba(0,212,255,0.9); }
+      100% { box-shadow: 0 0 30px rgba(0,212,255,0.6); }
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      color: #64748b;
+      border-top: 1px solid rgba(0,212,255,0.2);
+      margin-top: 4rem;
+    }
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2.5rem; }
+      .logo { font-size: 2.8rem; }
+      .post-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="https://mobilegamerhub.online" class="logo">Mobile Gamer Hub</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1 class="hero-title">NEON MOBILE GAMING BLOG</h1>
+    <p class="hero-subtitle">Real talk. Real games. No ads. No paywalls.<br>Manila-based, global vibes — USA, PH, SEA gamers welcome.</p>
+    
+    <div class="cta-big">
+      <p style="font-size:1.3rem; margin-bottom:1rem;">
+        First post is LIVE — more dropping every Monday 8PM PH time.
+      </p>
+      <a href="#latest" class="btn-neon">SEE THE FIRE</a>
+    </div>
+
+    <div class="post-grid" id="latest">
+
+      <!-- ONLY YOUR REAL POST -->
+      <article class="post-card">
+        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=900&h=500&fit=crop" alt="Stardew Valley premium mobile" class="post-img">
+        <div class="post-body">
+          <span class="post-tag">FIRST POST</span>
+          <h3 class="post-title">Best Premium Mobile Games 2025: Top Paid Titles Worth Every Dollar</h3>
+          <p class="post-excerpt">
+            Pay once, play forever. Stardew Valley, Dead Cells, Limbo, GRID Autosport, Balatro — 
+            console quality, zero ads, 50–100+ hours each. Real reviews from a Pinoy gamer who’s done with gacha hell.
+          </p>
+          <a href="/blog/best-premium-mobile-games-2025.html" class="read-more">Read Full List →</a>
+        </div>
+      </article>
+
+      <!-- COMING SOON CARD (so it doesn’t look empty) -->
+      <article class="post-card" style="opacity:0.6;">
+        <img src="https://images.unsplash.com/photo-1550745162-2c965f280f0e?w=900&h=500&fit=crop" alt="Coming soon" class="post-img">
+        <div class="post-body">
+          <span class="post-tag">COMING MONDAY</span>
+          <h3 class="post-title">Best FREE Mobile Games 2025 (Zero Ads, No BS)</h3>
+          <p class="post-excerpt">
+            Actually free. Actually fun. No energy timers. Dropping Nov 17, 8PM PH time.
+          </p>
+          <a href="#" class="read-more" style="color:#64748b;">Save this page →</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="cta-big">
+      <p style="font-size:1.4rem;">
+        New post every Monday 8PM PH time.<br>
+        Bookmark this page — neon gaming blog just getting started.
+      </p>
+      <a href="/blog/best-premium-mobile-games-2025.html" class="btn-neon">
+        READ FIRST POST NOW
+      </a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2025 Mobile Gamer Hub • Manila, Philippines • Neon Vibes Worldwide</p>
+  </footer>
+</body>
+</html>
