@@ -4,67 +4,103 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mobile Gamer Hub - Level Up Anywhere</title>
-  <meta name="description" content="Cyberpunk mobile gaming blog. Reviews, premium & free game lists 2025. Global • No BS • Weekly drops." />
-  <link rel="icon" href="blog/images/favicon.png" type="image/png"> <!-- add a pink controller icon later -->
+  <meta name="description" content="Cyberpunk mobile gaming blog. Neon reviews, premium & free game lists 2025. Global • No BS • Weekly drops." />
+  <meta property="og:image" content="https://mobilegamerhub.online/blog/images/stardew.jpg" />
+  <link rel="icon" href="blog/images/favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
   <style>
-    :root { --neon-pink: #ff2e63; --dark: #0b0b1f; }
-    * { margin:0; padding:0; box-sizing:border-box; }
+    :root { --neon-pink: #ff2e63; --cyan: #00ffff; --dark: #0b0b1f; --glow: rgba(255,46,99,0.8); }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { font-size: 16px; }
     body {
       font-family: 'Rajdhani', sans-serif;
       background: var(--dark);
-      background-image: radial-gradient(circle at 50% 70%, rgba(255,46,99,0.35) 0%, transparent 55%);
+      background-image: radial-gradient(circle at 50% 70%, var(--glow) 0%, transparent 55%);
+      background-attachment: fixed;
       color: #e0e0ff;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-      animation: pulseBg 15s infinite;
+      padding-top: 120px; /* space for fixed header */
     }
-    @keyframes pulseBg { 0%,100% { background-size: 100%; } 50% { background-size: 120%; } }
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 8vw; /* responsive! */
-      max-font-size: 6rem;
-      background: linear-gradient(90deg, var(--neon-pink), white, #00ffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 80px rgba(255,46,99,0.7);
-      letter-spacing: 0.8vw;
-      margin-bottom: 2rem;
+    header {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(11,11,31,0.95); backdrop-filter: blur(16px);
+      padding: 1.5rem 0; border-bottom: 4px solid var(--neon-pink);
+      box-shadow: 0 15px 40px rgba(255,46,99,0.35); z-index: 9999;
     }
-    p {
-      font-size: 4vw;
-      max-font-size: 1.8rem;
-      color: #ff99cc;
-      text-shadow: 0 0 20px rgba(255,46,99,0.5);
-      letter-spacing: 0.3vw;
-      margin-bottom: 4rem;
+    .nav-wrap {
+      max-width: 1400px; margin: 0 auto; padding: 0 2rem;
+      display: flex; justify-content: space-between; align-items: center;
     }
-    a {
-      background: var(--neon-pink);
-      color: white;
-      padding: 2vw 6vw;
-      border-radius: 70px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 4vw;
-      max-font-size: 1.5rem;
-      box-shadow: 0 0 60px rgba(255,46,99,0.9);
-      transition: all 0.5s;
+    .logo {
+      font-family: 'Orbitron', sans-serif; font-size: 2.8rem; font-weight: 900;
+      background: linear-gradient(90deg, var(--neon-pink), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      letter-spacing: 6px; text-shadow: 0 0 40px var(--glow); text-decoration: none;
     }
-    a:hover { transform: scale(1.15); box-shadow: 0 0 100px rgba(255,46,99,1); }
-    footer { margin-top: 10rem; color: #ff99cc; font-size: 3vw; max-font-size: 1rem; }
-    @media (max-width: 768px) { h1, p, a { letter-spacing: normal; } }
+    nav a {
+      color: #ff99cc; margin: 0 2.2rem; font-weight: 700; font-size: 1.15rem;
+      text-decoration: none; position: relative;
+    }
+    nav a::after {
+      content: ''; position: absolute; bottom: -10px; left: 50%; width: 0; height: 4px;
+      background: var(--neon-pink); transition: all 0.4s; transform: translateX(-50%);
+    }
+    nav a:hover { color: white; text-shadow: 0 0 25px var(--neon-pink); }
+    nav a:hover::after { width: 100%; }
+
+    .hero {
+      text-align: center; padding: 8rem 2rem 6rem; min-height: 80vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+    }
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif; font-size: 8vw; max-font-size: 6rem;
+      background: linear-gradient(90deg, var(--neon-pink), white, var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 80px var(--glow); letter-spacing: 0.8vw; margin-bottom: 2rem;
+    }
+    .hero p {
+      font-size: 4vw; max-font-size: 1.8rem; color: #ff99cc;
+      text-shadow: 0 0 20px var(--glow); letter-spacing: 0.3vw; margin-bottom: 4rem;
+    }
+    .btn {
+      background: var(--neon-pink); color: white; padding: 2vw 6vw; border-radius: 70px;
+      text-decoration: none; font-weight: 700; font-size: 4vw; max-font-size: 1.5rem;
+      box-shadow: 0 0 60px var(--glow); transition: all 0.5s;
+    }
+    .btn:hover { transform: scale(1.15); box-shadow: 0 0 100px rgba(255,46,99,1); }
+    footer { text-align: center; padding: 6rem 2rem 3rem; color: #ff99cc; font-size: 1rem; }
+
+    @media (max-width: 768px) {
+      html { font-size: 18px; }
+      header { padding: 1rem 0; }
+      .logo { font-size: 2.2rem; }
+      nav a { margin: 0 1rem; font-size: 1rem; }
+      .hero h1 { font-size: 4rem !important; letter-spacing: 6px !important; }
+      .hero p { font-size: 1.3rem !important; }
+      .btn { padding: 1rem 3rem !important; font-size: 1.2rem !important; }
+    }
   </style>
 </head>
 <body>
-  <h1>LEVEL UP ANYWHERE</h1>
-  <p>Neon reviews • Premium lists • Free gems • Weekly drops</p>
-  <a href="/blog/">ENTER THE BLOG</a>
-  <footer>© 2025 Mobile Gamer Hub • Cyberpunk Gaming • Global</footer>
+  <header>
+    <div class="nav-wrap">
+      <a href="/" class="logo">MOBILE GAMER HUB</a>
+      <nav>
+        <a href="/">HOME</a>
+        <a href="/blog/">BLOG</a>
+        <a href="/contact">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>LEVEL UP ANYWHERE</h1>
+    <p>Neon reviews • Premium lists • Free gems • Weekly drops</p>
+    <a href="/blog/" class="btn">ENTER THE BLOG</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Mobile Gamer Hub • Cyberpunk Gaming • Global</p>
+  </footer>
 </body>
 </html>
