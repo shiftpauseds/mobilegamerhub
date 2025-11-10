@@ -1,89 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog - Mobile Gamer Hub</title>
-  <link rel="icon" href="/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Global mobile gaming blog. Expert reviews, premium & free game lists 2025, no ads, no paywalls. Trusted by gamers in USA, Europe, Asia." />
+  <meta name="keywords" content="best mobile games 2025, premium mobile games, free mobile games no ads, global gaming blog" />
+  <meta property="og:title" content="Mobile Gamer Hub Blog - Global Gaming 2025" />
+  <meta property="og:description" content="Expert-curated mobile game lists. Premium titles worth buying. Free gems with zero BS. Updated weekly." />
+  <meta property="og:image" content="https://mobilegamerhub.online/assets/og-blog.jpg" />
+  <meta property="og:url" content="https://mobilegamerhub.online/blog/" />
+  <link rel="canonical" href="https://mobilegamerhub.online/blog/" />
+ 
+  <!-- Cyberpunk Neon Pink Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+ 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{background:#000;color:#fff;font-family:'Roboto Mono',monospace;overflow-x:hidden}
-    .orb{position:fixed;bottom:-10%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,#c462fb,#ff69b4,#ff1493);border-radius:50%;opacity:.6;filter:blur(100px);z-index:-1;animation:p 8s infinite alternate}
-    @keyframes p{0%{transform:scale(.9)}100%{transform:scale(1.1)}}
-    .nav{position:fixed;top:1rem;left:1rem;z-index:99;font-size:.75rem;letter-spacing:.25em}
-    .nav a{color:#c462fb;text-decoration:none;margin-right:1.2rem;text-shadow:0 0 10px #c462fb}
-    .hero{text-align:center;padding:15vh 1rem 8vh}
-    .hero h1{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(3rem,12vw,6rem);background:linear-gradient(90deg,#ff69b4,#c462fb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 60px #c462fb}
-    .hero p{font-size:1.1rem;letter-spacing:.15em;color:#e0b3ff;margin:2rem 0}
-    .cards{max-width:1100px;margin:0 auto;padding:0 1rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
-    .card{background:#111;border:2px solid #c462fb;border-radius:20px;overflow:hidden;box-shadow:0 0 40px #c462fb;transition:.4s;cursor:pointer}
-    .card:hover{transform:translateY(-12px);box-shadow:0 0 70px #ff69b4}
-    .card img{width:100%;height:180px;object-fit:cover}
-    .card h2{font-family:'Orbitron';font-size:1.4rem;padding:1.2rem 1rem 0;background:linear-gradient(90deg,#ff69b4,#c462fb);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-    .card p{padding:0 1rem 1.5rem;font-size:.95rem;color:#e0b3ff;line-height:1.6}
-    footer{text-align:center;padding:5rem 1rem;display:flex;flex-direction:column;align-items:center;gap:1rem}
-    @media(max-width:480px){.hero{padding-top:12vh}}
+    :root {
+      --neon-pink: #ff2e63;
+      --neon-cyan: #00ffff;
+      --dark-void: #0b0b1f;
+      --glass: rgba(20,20,45,0.55);
+      --glow-pink: rgba(255,46,99,0.8);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background: var(--dark-void);
+      color: #e0e0ff;
+      line-height: 1.7;
+      background-image: 
+        radial-gradient(circle at 50% 70%, var(--glow-pink) 0%, transparent 55%),
+        radial-gradient(circle at 20% 30%, rgba(0,255,255,0.15) 0%, transparent 60%);
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(11,11,31,0.95);
+      backdrop-filter: blur(16px);
+      padding: 1.5rem 0;
+      border-bottom: 4px solid var(--neon-pink);
+      box-shadow: 0 15px 40px rgba(255,46,99,0.35);
+      z-index: 9999;
+    }
+    .nav-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, var(--neon-pink), var(--neon-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 6px;
+      text-shadow: 0 0 40px var(--glow-pink);
+      text-decoration: none;
+    }
+    nav a {
+      color: #ff99cc;
+      margin: 0 2.2rem;
+      font-weight: 700;
+      font-size: 1.15rem;
+      text-decoration: none;
+      position: relative;
+      transition: all 0.4s;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 0;
+      height: 4px;
+      background: var(--neon-pink);
+      transition: all 0.4s;
+      transform: translateX(-50%);
+    }
+    nav a:hover { color: white; text-shadow: 0 0 25px var(--neon-pink); }
+    nav a:hover::after { width: 100%; }
+
+    main { margin-top: 120px; }
+    .hero {
+      text-align: center;
+      padding: 8rem 2rem 6rem;
+    }
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 6.5rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, var(--neon-pink), white, var(--neon-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 80px var(--glow-pink);
+      letter-spacing: 14px;
+      margin-bottom: 1.8rem;
+    }
+    .hero p {
+      font-size: 1.6rem;
+      color: #ff99cc;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-shadow: 0 0 25px var(--glow-pink);
+      letter-spacing: 3px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      gap: 4.5rem;
+      margin: 7rem 0;
+    }
+    .card {
+      background: var(--glass);
+      border-radius: 32px;
+      overflow: hidden;
+      border: 3px solid rgba(255,46,99,0.3);
+      transition: all 0.7s cubic-bezier(0.23,1,0.32,1);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    }
+    .card:hover {
+      transform: translateY(-25px) scale(1.03);
+      border-color: var(--neon-pink);
+      box-shadow: 
+        0 40px 80px rgba(0,0,0,0.8),
+        0 0 80px var(--glow-pink);
+    }
+    .card-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      transition: transform 0.8s;
+    }
+    .card:hover .card-img { transform: scale(1.15); }
+    .card-body {
+      padding: 3.5rem;
+    }
+    .tag {
+      background: var(--neon-pink);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: inline-block;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 0 40px var(--glow-pink);
+      animation: neonPulse 3s infinite;
+    }
+    .tag-upcoming {
+      background: linear-gradient(90deg, var(--neon-pink), var(--neon-cyan));
+      background-size: 200% 200%;
+      animation: cyberShift 4s infinite, neonPulse 2s infinite;
+    }
+    @keyframes neonPulse {
+      0%,100% { box-shadow: 0 0 40px var(--glow-pink); }
+      50% { box-shadow: 0 0 70px rgba(255,46,99,1); }
+    }
+    @keyframes cyberShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+    .card-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.4rem;
+      color: white;
+      margin: 1.5rem 0;
+      text-shadow: 0 0 30px var(--neon-pink);
+      letter-spacing: 4px;
+    }
+    .card-text {
+      color: #ffccdd;
+      font-size: 1.3rem;
+      margin: 2rem 0;
+      line-height: 1.9;
+    }
+    .btn {
+      background: var(--neon-pink);
+      color: white;
+      padding: 1.4rem 5rem;
+      border-radius: 70px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.3rem;
+      display: inline-block;
+      margin-top: 2.5rem;
+      box-shadow: 0 0 50px var(--glow-pink);
+      transition: all 0.5s;
+    }
+    .btn:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 90px rgba(255,46,99,1);
+    }
+    .coming-soon {
+      opacity: 0.9;
+      filter: brightness(0.85);
+    }
+    .coming-soon .btn {
+      background: #333;
+      color: #999;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+    footer {
+      text-align: center;
+      padding: 10rem 2rem 5rem;
+      color: #ff99cc;
+      font-size: 1.2rem;
+      border-top: 3px dashed rgba(255,46,99,0.5);
+      margin-top: 12rem;
+      text-shadow: 0 0 20px var(--glow-pink);
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 3.8rem; letter-spacing: 8px; }
+      .hero p { font-size: 1.3rem; }
+      .grid { grid-template-columns: 1fr; gap: 3.5rem; }
+      .card-img { height: 240px; }
+      .logo { font-size: 2.2rem; }
+      nav a { margin: 0 1.2rem; font-size: 1rem; }
+    }
   </style>
 </head>
 <body>
-  <div class="orb"></div>
+  <header>
+    <div class="nav-wrap">
+      <a href="https://mobilegamerhub.online" class="logo">MOBILE GAMER HUB</a>
+      <nav>
+        <a href="/">HOME</a>
+        <a href="/blog">BLOG</a>
+        <a href="/contact">CONTACT</a>
+      </nav>
+    </div>
+  </header>
 
-  <nav class="nav">
-    <a href="/">HOME</a>
-    <a href="/about">ABOUT</a>
-    <a href="/contact">CONTACT</a>
-  </nav>
+  <main>
+    <section class="hero">
+      <h1>MOBILE GAMING BLOG</h1>
+      <p>Expert-curated lists • Premium titles worth your money • Free gems with zero BS<br>
+      Trusted by gamers across USA, Europe, Asia • Updated every Monday</p>
+    </section>
 
-  <div class="hero">
-    <h1>BLOG</h1>
-    <p>5 KILLER POSTS IN ONE SCROLL</p>
-  </div>
+    <div class="container">
+      <div class="grid">
 
-  <div class="cards">
+        <!-- LIVE POST -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1200&h=600&fit=crop" alt="Best Premium Mobile Games 2025" class="card-img">
+          <div class="card-body">
+            <span class="tag">PREMIUM 2025</span>
+            <h2 class="card-title">Best Premium Mobile Games 2025: Top Paid Titles Worth Every Dollar</h2>
+            <p class="card-text">
+              Explore the top premium mobile games of 2025 for Android and iOS. Discover console-quality graphics, deep stories, and fair monetization in titles worth buying this year.
+            </p>
+            <a href="best-premium-mobile-games-2025.html" class="btn">ENTER THE GRID</a>
+          </div>
+        </article>
 
-    <!-- CARD 1 -->
-    <a href="/blog/growth-mindset.html" class="card">
-      <img src="https://files.mobilegamerhub.online/growth-hero.jpg" alt="">
-      <h2>Growth Mindset: Add “YET” & Level Up Forever</h2>
-      <p>One word turns every loss into XP. 30-day real log included.</p>
-    </a>
+        <!-- UPCOMING POST -->
+        <article class="card coming-soon">
+          <img src="https://images.unsplash.com/photo-1550745162-2c965f280f0e?w=1200&h=600&fit=crop&blur=8" alt="Best Free Mobile Games 2025" class="card-img">
+          <div class="card-body">
+            <span class="tag tag-upcoming">UPCOMING</span>
+            <h2 class="card-title">Best FREE Mobile Games 2025 (Zero Ads • No Energy)</h2>
+            <p class="card-text">
+              Actually free. Actually fun. No gacha, no timers, no paywalls.<br>
+              <strong>Dropping Monday, November 17 @ 8PM PST</strong>
+            </p>
+            <a href="#" class="btn">HACK INCOMING</a>
+          </div>
+        </article>
 
-    <!-- CARD 2 -->
-    <a href="/blog/codm-mythic.html" class="card">
-      <img src="https://files.mobilegamerhub.online/codm-hero.jpg" alt="">
-      <h2>CODM Mythic AK47 in 10 Seconds</h2>
-      <p>3 fresh codes → mythic draw FREE. Tested on iPhone 16.</p>
-    </a>
-
-    <!-- CARD 3 -->
-    <a href="/blog/genshin-5-2.html" class="card">
-      <img src="https://files.mobilegamerhub.online/genshin-5.2.jpg" alt="">
-      <h2>Genshin 5.2 FREE 5★ Selector</h2>
-      <p>Login 7 days → pick Raiden, Nahida or Furina. All servers.</p>
-    </a>
-
-    <!-- CARD 4 -->
-    <a href="/blog/roblox-10k.html" class="card">
-      <img src="https://files.mobilegamerhub.online/roblox.jpg" alt="">
-      <h2>Roblox 10K Robux Secret Link</h2>
-      <p>Instant 10,000 Robux. Works on mobile. No human verify.</p>
-    </a>
-
-    <!-- CARD 5 -->
-    <a href="/blog/15min-rule.html" class="card">
-      <img src="https://files.mobilegamerhub.online/15min.jpg" alt="">
-      <h2>15-Minute Rule = Pro in 30 Days</h2>
-      <p>Turn any “I suck” skill into cash. My sticker-pack proof.</p>
-    </a>
-
-  </div>
+      </div>
+    </div>
+  </main>
 
   <footer>
-    <svg width="26" height="26" fill="#c462fb" viewBox="0 0 24 24">
-      <path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5zM7.75 3.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5a4.25 4.25 0 0 1-4.25 4.25h-8.5A4.25 4.25 0 0 1 3.5 16.25v-8.5A4.25 4.25 0 0 1 7.75 3.5zm4.25 3a4.25 4.25 0 1 0 0 8.5 4.25 4.25 0 0 0 0-8.5zm0 1.5a2.75 2.75 0 1 1 0 5.5 2.75 2.75 0 0 1 0-5.5zm3.75-.88a1.02 1.02 0 1 0 0 2.04 1.02 1.02 0 0 0 0-2.04z"/>
-    </svg>
-    <a href="https://instagram.com/mobilegamerhub" style="color:#e0b3ff">@mobilegamerhub</a>
+    <p>© 2025 Mobile Gamer Hub • Global Gaming Authority • Built for gamers worldwide</p>
   </footer>
 </body>
 </html>
