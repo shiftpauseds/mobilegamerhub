@@ -3,149 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Top Mobile Games 2025 - Mobile Gamer Hub</title>
-  <meta name="description" content="Discover the best free mobile games of 2025—no ads, no BS. From PUBG to Pokemon GO, our expert picks for addictive, high-quality free-to-play titles." />
+  <title>Mobile Gamer Hub - Premium & Free Mobile Games 2025</title>
+  <meta name="description" content="Best premium and free mobile games 2025. No BS reviews. Updated weekly." />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root { --neon-pink: #ff2e63; --cyan: #00ffff; --dark: #0b0b1f; --glass: rgba(20,20,45,0.55); --glow: rgba(255,46,99,0.8); }
     * { margin:0; padding:0; box-sizing:border-box; }
-    html { font-size: 15px; }
-    body { font-family: 'Rajdhani', sans-serif; background: var(--dark); color: #e0e0ff; line-height: 1.7; background-image: radial-gradient(circle at 50% 70%, var(--glow) 0%, transparent 55%), radial-gradient(circle at 20% 30%, rgba(0,255,255,0.15) 0%, transparent 60%); background-attachment: fixed; overflow-x: hidden; padding-top: 100px; }
+    body { font-family: 'Rajdhani', sans-serif; background: var(--dark); color: #e0e0ff; min-height: 100vh; background-image: radial-gradient(circle at 50% 70%, var(--glow) 0%, transparent 55%), radial-gradient(circle at 20% 30%, rgba(0,255,255,0.15) 0%, transparent 60%); background-attachment: fixed; display:flex; flex-direction:column; }
     header { position: fixed; top: 0; left: 0; right: 0; background: rgba(11,11,31,0.95); backdrop-filter: blur(16px); padding: 1.2rem 0; border-bottom: 4px solid var(--neon-pink); box-shadow: 0 15px 40px rgba(255,46,99,0.35); z-index: 9999; }
     .nav-wrap { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-family: 'Orbitron', sans-serif; font-size: 2.2rem; font-weight: 900; background: linear-gradient(90deg, var(--neon-pink), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 4px; text-shadow: 0 0 30px var(--glow); text-decoration: none; }
-    nav a { color: #ff99cc; margin: 0 1rem; font-weight: 700; font-size: 1rem; text-decoration: none; position: relative; }
-    nav a::after { content: ''; position: absolute; bottom: -8px; left: 50%; width: 0; height: 3px; background: var(--neon-pink); transition: all 0.4s; transform: translateX(-50%); }
-    nav a:hover { color: white; text-shadow: 0 0 20px var(--neon-pink); }
-    nav a:hover::after { width: 100%; }
-    main { margin-top: 20px; }
-    .hero { text-align: center; padding: 4rem 1.5rem; }
-    .hero h1 { font-family: 'Orbitron', sans-serif; font-size: 9vw; max-width: 4rem; background: linear-gradient(90deg, var(--neon-pink), white, var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 60px var(--glow); letter-spacing: 0.6vw; margin-bottom: 1.5rem; }
-    .hero p { font-size: 1.15rem; color: #ff99cc; max-width: 900px; margin: 0 auto; text-shadow: 0 0 15px var(--glow); }
-    .container { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin: 4rem 0; }
-    .game-card { background: var(--glass); border-radius: 28px; overflow: hidden; border: 3px solid rgba(255,46,99,0.3); transition: all 0.6s; backdrop-filter: blur(20px); box-shadow: 0 20px 40px rgba(0,0,0,0.6); padding: 2rem; }
-    .game-card:hover { transform: translateY(-10px); border-color: var(--neon-pink); box-shadow: 0 30px 60px rgba(0,0,0,0.8), 0 0 50px var(--glow); }
-    .game-img { width: 100%; height: 200px; object-fit: cover; border-radius: 20px; margin-bottom: 1rem; transition: transform 0.5s; }
-    .game-card:hover .game-img { transform: scale(1.05); }
-    .tag { background: var(--cyan); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.9rem; display: inline-block; margin-bottom: 1rem; box-shadow: 0 0 20px rgba(0,255,255,0.5); }
-    .game-title { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; color: white; margin: 1rem 0; text-shadow: 0 0 20px var(--neon-pink); letter-spacing: 2px; }
-    .game-text { color: #ffccdd; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem; }
-    .download-btn { background: var(--neon-pink); color: white; padding: 0.8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; display: inline-block; box-shadow: 0 0 30px var(--glow); transition: all 0.4s; }
-    .download-btn:hover { transform: scale(1.1); box-shadow: 0 0 50px rgba(255,46,99,1); }
-    .section { margin: 4rem 0; padding: 2rem; background: var(--glass); border-radius: 20px; border-left: 4px solid var(--cyan); }
-    .section h2 { font-family: 'Orbitron', sans-serif; font-size: 2.2rem; color: var(--cyan); margin-bottom: 1.5rem; text-shadow: 0 0 20px var(--cyan); }
-    .section ul { list-style: none; padding-left: 0; }
-    .section li { color: #ffccdd; font-size: 1.1rem; margin-bottom: 0.8rem; padding-left: 1rem; position: relative; }
-    .section li::before { content: '▶'; color: var(--neon-pink); font-weight: bold; position: absolute; left: 0; }
-    footer { text-align: center; padding: 6rem 1rem 3rem; color: #ff99cc; font-size: 0.95rem; border-top: 3px dashed rgba(255,46,99,0.5); margin-top: 8rem; text-shadow: 0 0 15px var(--glow); }
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 10vw; max-width: 3.6rem; }
-      .hero p { font-size: 1.05rem; }
-      .grid { gap: 2rem; }
-      .game-img { height: 180px; }
-      .game-card { padding: 1.5rem; }
-      .game-title { font-size: 1.6rem; }
-      .tag { padding: 0.4rem 1.2rem; font-size: 0.85rem; }
-      .section { padding: 1.5rem; }
-    }
+    .logo { font-family: 'Orbitron', sans-serif; font-size: 2.5rem; font-weight: 900; background: linear-gradient(90deg, var(--neon-pink), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 4px; text-shadow: 0 0 30px var(--glow); text-decoration:none; }
+    nav a { color: #ff99cc; margin: 0 1.5rem; font-weight: 700; text-decoration: none; position:relative; }
+    nav a::after { content:''; position:absolute; bottom:-8px; left:50%; width:0; height:3px; background:var(--neon-pink); transition:all .4s; transform:translateX(-50%); }
+    nav a:hover { color:white; text-shadow:0 0 20px var(--neon-pink); }
+    nav a:hover::after { width:100%; }
+    main { flex:1; display:flex; align-items:center; justify-content:center; text-align:center; padding: 100px 1.5rem 4rem; }
+    .hero h1 { font-family: 'Orbitron', sans-serif; font-size: 10vw; max-font-size: 6rem; background: linear-gradient(90deg, var(--neon-pink), white, var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 80px var(--glow); letter-spacing: 0.6vw; margin-bottom:1rem; }
+    .hero p { font-size: 1.4rem; color: #ff99cc; max-width: 800px; margin: 0 auto 3rem; text-shadow: 0 0 20px var(--glow); }
+    .btn-big { background: var(--neon-pink); color: white; padding: 1.2rem 3.5rem; border-radius: 60px; font-weight: 700; font-size: 1.3rem; text-decoration: none; box-shadow: 0 0 50px var(--glow); transition: all 0.5s; display: inline-block; }
+    .btn-big:hover { transform: scale(1.15); box-shadow: 0 0 80px rgba(255,46,99,1); }
+    footer { text-align:center; padding: 3rem 1rem; color: #ff99cc; border-top: 3px dashed rgba(255,46,99,0.5); text-shadow: 0 0 15px var(--glow); }
   </style>
 </head>
 <body>
   <header>
     <div class="nav-wrap">
-      <a href="/blog/" class="logo">MOBILE GAMER HUB</a>
+      <a href="/" class="logo">MOBILE GAMER HUB</a>
       <nav>
-        <a href="/blog/">HOME</a>
+        <a href="/">HOME</a>
         <a href="/blog/">BLOG</a>
         <a href="/contact">CONTACT</a>
       </nav>
     </div>
   </header>
+
   <main>
-    <section class="hero">
-      <h1>TOP MOBILE GAMES 2025</h1>
-      <p>These free-to-play legends dominated downloads and hearts—no gacha traps, minimal ads, pure gaming bliss. Updated Nov 17, 2025.</p>
-    </section>
-    <div class="container">
-      <div class="grid">
-        <article class="game-card">
-          <img src="blog/images/candy-crush.jpg" alt="Candy Crush Saga gameplay" class="game-img" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200/0b0b1f/00ffff?text=Candy+Crush';">
-          <span class="tag">PUZZLE</span>
-          <h2 class="game-title">1. Candy Crush Saga</h2>
-          <p class="game-text">The ultimate match-three addict—vibrant levels, power-ups, and endless challenges that hook you for 'just one more'.</p>
-          <a href="https://play.google.com/store/apps/details?id=com.king.candycrushsaga" class="download-btn" target="_blank">GET ON GOOGLE PLAY</a>
-        </article>
-        <article class="game-card">
-          <img src="blog/images/pubg-mobile.jpg" alt="PUBG Mobile battle royale" class="game-img" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200/0b0b1f/ff2e63?text=PUBG+Mobile';">
-          <span class="tag">BATTLE ROYALE</span>
-          <h2 class="game-title">2. PUBG Mobile</h2>
-          <p class="game-text">Drop in, gear up, last man standing—intense multiplayer survival with squad vibes and tactical depth.</p>
-          <a href="https://play.google.com/store/apps/details?id=com.tencent.ig" class="download-btn" target="_blank">GET ON GOOGLE PLAY</a>
-        </article>
-        <article class="game-card">
-          <img src="blog/images/subway-surfers.jpg" alt="Subway Surfers endless run" class="game-img" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200/0b0b1f/00ffff?text=Subway+Surfers';">
-          <span class="tag">ENDLESS RUNNER</span>
-          <h2 class="game-title">3. Subway Surfers</h2>
-          <p class="game-text">Dash through cities, dodge obstacles, collect coins—colorful chaos that's perfect for short bursts.</p>
-          <a href="https://play.google.com/store/apps/details?id=com.kiloo.subwaysurf" class="download-btn" target="_blank">GET ON GOOGLE PLAY</a>
-        </article>
-        <article class="game-card">
-          <img src="blog/images/among-us.jpg" alt="Among Us social deduction" class="game-img" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200/0b0b1f/ff2e63?text=Among+Us';">
-          <span class="tag">SOCIAL DEDUCTION</span>
-          <h2 class="game-title">4. Among Us</h2>
-          <p class="game-text">Crewmates vs. imposters—deception, tasks, and emergency meetings that turn friends into suspects.</p>
-          <a href="https://play.google.com/store/apps/details?id=com.innersloth.spacemafia" class="download-btn" target="_blank">GET ON GOOGLE PLAY</a>
-        </article>
-        <article class="game-card">
-          <img src="blog/images/clash-of-clans.jpg" alt="Clash of Clans base building" class="game-img" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200/0b0b1f/00ffff?text=Clash+of+Clans';">
-          <span class="tag">STRATEGY</span>
-          <h2 class="game-title">5. Clash of Clans</h2>
-          <p class="game-text">Build your village, train troops, raid rivals—epic clan wars and long-term empire growth.</p>
-          <a href="https://play.google.com/store/apps/details?id=com.supercell.clashofclans" class="download-btn" target="_blank">GET ON GOOGLE PLAY</a>
-        </article>
-        <article class="game-card">
-          <img src="blog/images/cod-mobile.jpg" alt="Call of Duty Mobile FPS" class="game-img" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200/0b0b1f/ff2e63?text=Call+of+Duty+Mobile';">
-          <span class="tag">FPS</span>
-          <h2 class="game-title">6. Call of Duty: Mobile</h2>
-          <p class="game-text">Fast-paced shooters, zombies, and battle royales—console polish in your pocket.</p>
-          <a href="https://play.google.com/store/apps/details?id=com.activision.callofduty.shooter" class="download-btn" target="_blank">GET ON GOOGLE PLAY</a>
-        </article>
-        <article class="game-card">
-          <img src="blog/images/roblox.jpg" alt="Roblox user-generated worlds" class="game-img" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200/0b0b1f/00ffff?text=Roblox';">
-          <span class="tag">PLATFORM</span>
-          <h2 class="game-title">7. Roblox</h2>
-          <p class="game-text">Infinite worlds to create, play, and share— from obbies to roleplay, it's a universe of fun.</p>
-          <a href="https://play.google.com/store/apps/details?id=com.roblox.client" class="download-btn" target="_blank">GET ON GOOGLE PLAY</a>
-        </article>
-        <article class="game-card">
-          <img src="blog/images/pokemon-go.jpg" alt="Pokemon GO AR adventure" class="game-img" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200/0b0b1f/ff2e63?text=Pokemon+GO';">
-          <span class="tag">AR ADVENTURE</span>
-          <h2 class="game-title">8. Pokemon GO</h2>
-          <p class="game-text">Catch 'em all in the real world—gyms, raids, and events that get you moving.</p>
-          <a href="https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo" class="download-btn" target="_blank">GET ON GOOGLE PLAY</a>
-        </article>
-      </div>
-      <section class="section">
-        <h2>Why These Games Are So Popular</h2>
-        <ul>
-          <li>Accessible on any device—low specs? No problem. High-end? Max it out.</li>
-          <li>Thriving communities: Join clans, squads, or global events for that social spark.</li>
-          <li>Stunning graphics and sound that punch above mobile's weight.</li>
-          <li>Regular updates keep things fresh without forcing your wallet open.</li>
-        </ul>
-      </section>
-      <section class="section">
-        <h2>The Future of Mobile Gaming</h2>
-        <ul>
-          <li>AR/VR integration for mind-bending immersion.</li>
-          <li>Cloud streaming to play AAA titles anywhere.</li>
-          <li>Cross-platform play—seamless with PC/console friends.</li>
-          <li>AI-driven personalization for stories that adapt to you.</li>
-        </ul>
-      </section>
+    <div class="hero">
+      <h1>MOBILE GAMER HUB</h1>
+      <p>Best Premium & Free Mobile Games 2025<br>No BS reviews • Weekly updates • Made for real gamers</p>
+      <a href="/blog/" class="btn-big">ENTER THE HUB</a>
     </div>
   </main>
-  <footer><p>© 2025 Mobile Gamer Hub • Dive deeper every Monday</p></footer>
+
+  <footer><p>© 2025 Mobile Gamer Hub — Philippines-powered gaming blog</p></footer>
 </body>
 </html>
