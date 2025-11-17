@@ -30,24 +30,18 @@
     .card:hover .card-img { transform: scale(1.1); }
     .card-body { padding: 2rem; }
     .tag { background: var(--neon-pink); color: white; padding: 0.5rem 1.5rem; border-radius: 50px; font-weight: 700; font-size: 0.9rem; display: inline-block; margin-bottom: 1rem; box-shadow: 0 0 30px var(--glow); animation: neonPulse 3s infinite; }
-    .tag-upcoming { background: linear-gradient(90deg, var(--neon-pink), var(--cyan)); background-size: 200% 200%; animation: cyberShift 4s infinite, neonPulse 2s infinite; }
+    .tag-free { background: var(--cyan); color: #000; box-shadow: 0 0 30px rgba(0,255,255,0.8); }
     @keyframes neonPulse { 0%,100% { box-shadow: 0 0 30px var(--glow); } 50% { box-shadow: 0 0 50px rgba(255,46,99,1); } }
-    @keyframes cyberShift { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
     .card-title { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; color: white; margin: 1rem 0; text-shadow: 0 0 20px var(--neon-pink); letter-spacing: 2px; }
     .card-text { color: #ffccdd; font-size: 1.05rem; line-height: 1.7; }
     .btn { background: var(--neon-pink); color: white; padding: 0.9rem 2.5rem; border-radius: 60px; text-decoration: none; font-weight: 700; font-size: 1.05rem; display: inline-block; margin-top: 1.5rem; box-shadow: 0 0 40px var(--glow); transition: all 0.5s; }
     .btn:hover { transform: scale(1.12); box-shadow: 0 0 70px rgba(255,46,99,1); }
-    .coming-soon { opacity: 0.92; filter: brightness(0.9); }
-    .coming-soon .btn { background: #444; color: #aaa; cursor: not-allowed; box-shadow: none; }
     footer { text-align: center; padding: 6rem 1rem 3rem; color: #ff99cc; font-size: 0.95rem; border-top: 3px dashed rgba(255,46,99,0.5); margin-top: 8rem; text-shadow: 0 0 15px var(--glow); }
     @media (max-width: 480px) {
-      .hero h1 { font-size: 10vw; max-font-size: 3.6rem; }
-      .hero p { font-size: 1.05rem; }
-      .grid { gap: 2rem; }
+      .hero h1 { font-size: 10vw; }
       .card-img { height: 180px; }
       .card-body { padding: 1.5rem; }
       .card-title { font-size: 1.6rem; }
-      .tag { padding: 0.4rem 1.2rem; font-size: 0.85rem; }
     }
   </style>
 </head>
@@ -57,18 +51,21 @@
       <a href="/" class="logo">MOBILE GAMER HUB</a>
       <nav>
         <a href="/">HOME</a>
-        <a href="/">BLOG</a>
+        <a href="/blog/">BLOG</a>
         <a href="/contact">CONTACT</a>
       </nav>
     </div>
   </header>
+
   <main>
     <section class="hero">
       <h1>MOBILE GAMING BLOG</h1>
       <p>Expert-curated lists • Premium titles worth your money • Free gems with zero BS<br>Trusted by gamers across USA, Europe, Asia • Updated every Monday</p>
     </section>
+
     <div class="container">
       <div class="grid">
+        <!-- PREMIUM CARD (unchanged) -->
         <article class="card">
           <img src="blog/images/stardew.jpg" alt="Premium Games 2025" class="card-img" loading="lazy">
           <div class="card-body">
@@ -78,18 +75,21 @@
             <a href="best-premium-mobile-games-2025.html" class="btn">ENTER THE GRID</a>
           </div>
         </article>
-        <article class="card coming-soon">
-          <img src="blog/images/free-teaser.jpg" alt="Free Games 2025" class="card-img" loading="lazy">
+
+        <!-- FREE CARD → NOW LIVE! -->
+        <article class="card">
+          <img src="blog/images/free-teaser.jpg" alt="Top Free Mobile Games 2025" class="card-img" loading="lazy">
           <div class="card-body">
-            <span class="tag tag-upcoming">UPCOMING</span>
+            <span class="tag tag-free">FREE 2025</span>
             <h2 class="card-title">Best FREE Mobile Games 2025</h2>
-            <p class="card-text">No gacha. No ads. Coming Nov 17.</p>
-            <a href="https://mobilegamerhub.online/blog/top-mobile-games-2025.html" class="btn">COMING SOON</a>
+            <p class="card-text">No gacha. No forced ads. Pure fun — live right now!</p>
+            <a href="top-mobile-games-2025.html" class="btn">DIVE IN NOW</a>
           </div>
         </article>
       </div>
     </div>
   </main>
+
   <footer><p>© 2025 Mobile Gamer Hub</p></footer>
 </body>
 </html>
