@@ -38,19 +38,22 @@
       line-height: 1.8; background-image:
         radial-gradient(circle at 50% 70%, var(--glow-pink) 0%, transparent 55%),
         radial-gradient(circle at 20% 30%, var(--glow-cyan) 0%, transparent 60%);
-      background-attachment: fixed; overflow-x: hidden; padding-top: 100px;
+      background-attachment: fixed; overflow-x: hidden; padding-top: 80px;
     }
     header {
       position: fixed; top: 0; left: 0; right: 0; background: rgba(11,11,31,0.98);
-      backdrop-filter: blur(16px); padding: 1.2rem 0; border-bottom: 4px solid var(--neon-pink);
-      box-shadow: 0 15px 40px rgba(255,46,99,0.35); z-index: 9999;
+      backdrop-filter: blur(16px); padding: 1rem 0; border-bottom: 1px solid var(--border);
+      z-index: 9999;
     }
-    .nav-wrap { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .nav-wrap { 
+      max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; 
+      display: flex; justify-content: space-between; align-items: center; 
+    }
     .logo {
-      font-family: 'Orbitron', sans-serif; font-size: 2.2rem; font-weight: 900;
+      font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 900;
       background: linear-gradient(90deg, var(--neon-pink), var(--cyan));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      letter-spacing: 4px; text-shadow: 0 0 30px var(--glow-pink); text-decoration: none;
+      letter-spacing: 2px; text-shadow: 0 0 30px var(--glow-pink); text-decoration: none;
     }
     nav a {
       color: var(--accent); margin: 0 1rem; font-weight: 700; font-size: 1rem;
@@ -64,11 +67,11 @@
     nav a:hover::after { width: 100%; }
     .container { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
     .hero-title {
-      font-family: 'Orbitron', sans-serif; font-size: 3.2rem; font-weight: 900;
+      font-family: 'Orbitron', sans-serif; font-size: 2.5rem; font-weight: 900;
       background: linear-gradient(90deg, var(--neon-pink), white, var(--cyan));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       text-align: center; margin: 1.5rem 0 1rem; text-shadow: 0 0 50px var(--glow-pink);
-      letter-spacing: 3px; line-height: 1.2;
+      letter-spacing: 2px; line-height: 1.2;
     }
     .post-meta {
       text-align: center; color: var(--accent); font-size: 0.95rem; margin: 1rem 0 2rem;
@@ -83,38 +86,38 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.4); line-height: 1.9;
     }
     h2 {
-      font-family: 'Orbitron', sans-serif; font-size: 1.9rem; color: var(--neon-pink);
-      margin: 3rem 0 1.5rem; text-align: center; text-shadow: 0 0 25px var(--glow-pink);
-      letter-spacing: 2px; position: relative;
+      font-family: 'Orbitron', sans-serif; font-size: 1.7rem; color: var(--neon-pink);
+      margin: 3rem 0 1.5rem; text-shadow: 0 0 25px var(--glow-pink);
+      letter-spacing: 1px; position: relative; padding-bottom: 0.5rem;
     }
     h2::after {
-      content: ''; display: block; width: 80px; height: 4px; background: var(--cyan);
-      margin: 0.8rem auto; border-radius: 2px; box-shadow: 0 0 15px var(--glow-cyan);
+      content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 4px; 
+      background: var(--cyan); border-radius: 2px; box-shadow: 0 0 15px var(--glow-cyan);
     }
     .game-card {
-      background: var(--glass); border-radius: 24px; overflow: hidden; margin: 2.5rem 0;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5); transition: all 0.5s cubic-bezier(0.23,1,0.32,1);
-      border: 1px solid var(--border); backdrop-filter: blur(14px);
+      background: var(--glass); border-radius: 15px; overflow: hidden; margin: 2rem 0;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3); transition: all 0.4s ease;
+      border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(12px);
     }
     .game-card:hover {
-      transform: translateY(-12px) scale(1.015); border-color: var(--neon-pink);
-      box-shadow: 0 35px 70px rgba(255,46,99,0.35), 0 0 60px var(--glow-pink);
+      transform: translateY(-8px); border-color: var(--neon-pink);
+      box-shadow: 0 15px 40px rgba(255,46,99,0.25);
     }
     .game-img {
-      width: 100%; height: 220px; object-fit: cover; transition: transform 0.8s ease;
+      width: 100%; height: 220px; object-fit: cover; transition: transform 0.6s ease;
     }
-    .game-card:hover .game-img { transform: scale(1.08); }
-    .game-body { padding: 2rem; }
+    .game-card:hover .game-img { transform: scale(1.05); }
+    .game-body { padding: 1.5rem; }
     .game-header {
       display: flex; justify-content: space-between; align-items: flex-start;
       flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;
     }
     .genre {
-      background: var(--neon-pink); color: white; padding: 0.5rem 1.2rem; border-radius: 30px;
-      font-size: 0.85rem; font-weight: 700; box-shadow: 0 0 20px var(--glow-pink);
+      background: var(--neon-pink); color: white; padding: 0.4rem 1rem; border-radius: 20px;
+      font-size: 0.8rem; font-weight: 700; box-shadow: 0 0 15px var(--glow-pink);
     }
     .game-title {
-      font-family: 'Orbitron', sans-serif; font-size: 1.7rem; color: var(--cyan);
+      font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: var(--cyan);
       margin: 0.5rem 0; text-shadow: 0 0 15px var(--glow-cyan); letter-spacing: 1px;
     }
     .game-specs {
@@ -122,49 +125,119 @@
       gap: 0.8rem; margin: 1.2rem 0;
     }
     .spec {
-      background: rgba(0,255,255,0.1); padding: 0.6rem; border-radius: 12px;
-      text-align: center; font-size: 0.85rem; border: 1px solid rgba(0,255,255,0.3);
+      background: rgba(0,255,255,0.1); padding: 0.6rem; border-radius: 10px;
+      text-align: center; font-size: 0.85rem; border: 1px solid rgba(0,255,255,0.2);
     }
-    .spec strong { color: var(--cyan); display: block; font-size: 1.1rem; }
+    .spec strong { color: var(--cyan); display: block; font-size: 1rem; }
     .verdict {
-      background: rgba(255,46,99,0.15); padding: 1rem; border-radius: 16px;
+      background: rgba(255,46,99,0.15); padding: 1rem; border-radius: 12px;
       margin: 1.5rem 0; font-weight: 600; border-left: 4px solid var(--neon-pink);
     }
-    .cta { text-align: center; margin: 4rem 0; }
-    .btn {
-      background: var(--neon-pink); color: white; padding: 1.1rem 3rem; border-radius: 60px;
-      text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block;
-      box-shadow: 0 0 30px var(--glow-pink); transition: all 0.4s;
-    }
-    .btn:hover {
-      background: white; color: var(--neon-pink); transform: translateY(-3px);
-      box-shadow: 0 0 50px var(--glow-pink);
-    }
     .why-premium {
-      background: var(--glass); padding: 2.5rem; border-radius: 20px;
+      background: var(--glass); padding: 2rem; border-radius: 15px;
       margin: 3rem 0; backdrop-filter: blur(12px); border: 1px solid var(--border);
     }
     .why-premium h3 {
-      font-family: 'Orbitron', sans-serif; color: var(--cyan); font-size: 1.6rem;
+      font-family: 'Orbitron', sans-serif; color: var(--cyan); font-size: 1.5rem;
       margin-bottom: 1.5rem; text-shadow: 0 0 15px var(--glow-cyan);
     }
     .why-premium ul { list-style: none; padding-left: 0; }
     .why-premium li {
-      margin: 1rem 0; padding-left: 2rem; position: relative; font-size: 1.1rem;
+      margin: 1rem 0; padding-left: 2rem; position: relative; font-size: 1.05rem;
     }
     .why-premium li::before {
       content: '★'; color: var(--neon-pink); position: absolute; left: 0;
-      font-size: 1.3rem; top: -2px;
+      font-size: 1.2rem; top: -2px;
     }
+    
+    /* Read More Section Styles */
+    .read-more-section {
+      margin-top: 4rem;
+      background: var(--glass);
+      border-radius: 15px;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .read-more-section h2 {
+      text-align: center;
+    }
+    .read-more-section h2::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .read-more-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .read-more-card {
+      background: rgba(11,11,31,0.7);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .read-more-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+    .read-more-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 2px solid var(--neon-pink);
+    }
+    .read-more-content {
+      padding: 1.5rem;
+    }
+    .read-more-title {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--cyan);
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 0 15px var(--glow-cyan);
+    }
+    .read-more-excerpt {
+      color: var(--text);
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .read-more-link {
+      display: inline-block;
+      color: var(--neon-pink);
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+      border: 1px solid var(--neon-pink);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+    .read-more-link:hover {
+      background: var(--neon-pink);
+      color: white;
+      text-shadow: 0 0 10px white;
+      box-shadow: 0 0 15px var(--glow-pink);
+    }
+    
     footer {
       background: rgba(11,11,31,0.98); padding: 3rem 0; margin-top: 5rem;
       border-top: 4px solid var(--neon-pink); text-align: center;
     }
     footer p { color: var(--accent); font-size: 0.9rem; }
+    footer a { color: var(--cyan); text-decoration: none; transition: all 0.3s; }
+    footer a:hover { text-shadow: 0 0 10px var(--glow-cyan); }
+    
     @media (max-width: 768px) {
-      .hero-title { font-size: 2.4rem; }
+      .hero-title { font-size: 2rem; }
       .game-img { height: 180px; }
       nav a { margin: 0 0.5rem; font-size: 0.9rem; }
+      .game-header { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -214,20 +287,96 @@
       </div>
     </div>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TKP5FPK6V"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    <!-- Game 2: Alien Isolation -->
+    <div class="game-card">
+      <img src="images/alien-isolation.jpg" alt="Alien Isolation" class="game-img" width="1200" height="675" loading="lazy">
+      <div class="game-body">
+        <div class="game-header">
+          <span class="genre">Horror/Survival</span>
+          <div class="game-title">Alien Isolation</div>
+        </div>
+        <p>Survival horror reaches new heights with <strong>Alien Isolation</strong>. This terrifying adaptation brings the iconic sci-fi horror experience to mobile with stunning visuals and immersive audio. Outsmart the perfect hunter in a desperate struggle for survival.</p>
+        <div class="game-specs">
+          <div class="spec"><strong>Graphics</strong> AAA Quality</div>
+          <div class="spec"><strong>Offline</strong> Yes</div>
+          <div class="spec"><strong>Size</strong> 4.1 GB</div>
+          <div class="spec"><strong>Price</strong> $14.99</div>
+        </div>
+        <div class="verdict">The definitive mobile horror experience - not for the faint of heart.</div>
+      </div>
+    </div>
 
-      gtag('config', 'G-8TKP5FPK6V');
-    </script>
+    <!-- Game 3: Prince of Persia -->
+    <div class="game-card">
+      <img src="images/prince-of-persia.jpg" alt="Prince of Persia: The Lost Crown" class="game-img" width="1200" height="675" loading="lazy">
+      <div class="game-body">
+        <div class="game-header">
+          <span class="genre">Action/Platformer</span>
+          <div class="game-title">Prince of Persia: The Lost Crown</div>
+        </div>
+        <p>Return to the legendary franchise with <strong>Prince of Persia: The Lost Crown</strong>. This mobile masterpiece combines fluid parkour movement with intense combat and mind-bending time manipulation puzzles in a beautifully crafted world.</p>
+        <div class="game-specs">
+          <div class="spec"><strong>Graphics</strong> Stylized 3D</div>
+          <div class="spec"><strong>Offline</strong> Yes</div>
+          <div class="spec"><strong>Size</strong> 2.8 GB</div>
+          <div class="spec"><strong>Price</strong> $16.99</div>
+        </div>
+        <div class="verdict">A triumphant return for the Prince - platforming perfection on mobile.</div>
+      </div>
+    </div>
+
+    <!-- Game 4: Crashlands 2 -->
+    <div class="game-card">
+      <img src="images/crashlands-2.jpg" alt="Crashlands 2" class="game-img" width="1200" height="675" loading="lazy">
+      <div class="game-body">
+        <div class="game-header">
+          <span class="genre">Crafting/Adventure</span>
+          <div class="game-title">Crashlands 2</div>
+        </div>
+        <p>The sequel to the beloved crafting adventure delivers even more content, humor, and creativity. <strong>Crashlands 2</strong> expands on everything that made the original great with new biomes, creatures, and crafting systems that will keep you hooked for hours.</p>
+        <div class="game-specs">
+          <div class="spec"><strong>Graphics</strong> Colorful 2D</div>
+          <div class="spec"><strong>Offline</strong> Yes</div>
+          <div class="spec"><strong>Size</strong> 1.2 GB</div>
+          <div class="spec"><strong>Price</strong> $9.99</div>
+        </div>
+        <div class="verdict">The ultimate crafting adventure with endless creativity and charm.</div>
+      </div>
+    </div>
+
+    <!-- Why Premium Section -->
+    <div class="why-premium">
+      <h3>Why Choose Premium Mobile Games?</h3>
+      <ul>
+        <li><strong>No Ads or Microtransactions:</strong> Enjoy uninterrupted gameplay without constant ads or pressure to spend more money.</li>
+        <li><strong>Complete Experience:</strong> Get the full game upfront with all content available from the start.</li>
+        <li><strong>Higher Quality:</strong> Premium games often feature better graphics, deeper stories, and more polished gameplay.</li>
+        <li><strong>Offline Play:</strong> Most premium games work completely offline, perfect for travel or areas with poor connectivity.</li>
+        <li><strong>Support Developers:</strong> Your purchase directly supports game developers, encouraging more high-quality titles.</li>
+      </ul>
+    </div>
+
+    <!-- Read More Section -->
+    <div class="read-more-section">
+      <h2>More From Mobile Gamer Hub</h2>
+      <p style="text-align: center; margin-bottom: 1.5rem;">Check out our other popular gaming articles:</p>
+      
+      <div class="read-more-grid">
+        <div class="read-more-card">
+          <img src="https://mobilegamerhub.online/images/top-mobile-games-2025.jpg" alt="Top Mobile Games 2025" class="read-more-image">
+          <div class="read-more-content">
+            <h3 class="read-more-title">Top Mobile Games That Took the World by Storm in 2025</h3>
+            <p class="read-more-excerpt">Discover the most popular and addictive mobile games of 2025, from Candy Crush Saga to PUBG Mobile and Call of Duty: Mobile.</p>
+            <a href="https://mobilegamerhub.online/blog/top-mobile-games-2025.html" class="read-more-link">Read Article</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <footer>
     <div class="container">
-      <p>© 2025 Mobile Gamer Hub. All rights reserved. | <a href="/privacy" style="color:var(--cyan);">Privacy Policy</a></p>
+      <p>© 2025 Mobile Gamer Hub. All rights reserved. | <a href="/privacy">Privacy Policy</a></p>
     </div>
   </footer>
 </body>
