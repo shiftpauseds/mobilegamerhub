@@ -38,21 +38,22 @@
       line-height: 1.8; background-image:
         radial-gradient(circle at 50% 70%, var(--glow-pink) 0%, transparent 55%),
         radial-gradient(circle at 20% 30%, var(--glow-cyan) 0%, transparent 60%);
-      background-attachment: fixed; overflow-x: hidden; padding-top: 100px;
+      background-attachment: fixed; overflow-x: hidden; padding-top: 80px;
     }
     header {
-      position: relative; background: rgba(11,11,31,0.98);
-      backdrop-filter: blur(16px); padding: 3rem 0;
+      position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+      background: rgba(11,11,31,0.98); backdrop-filter: blur(16px);
+      padding: 1rem 0; border-bottom: 1px solid var(--border);
     }
-    header img {
-      width: 100%; height: auto; object-fit: cover;
+    .nav-wrap { 
+      max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; 
+      display: flex; justify-content: space-between; align-items: center; 
     }
-    .nav-wrap { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; }
     .logo {
-      font-family: 'Orbitron', sans-serif; font-size: 2.2rem; font-weight: 900;
+      font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 900;
       background: linear-gradient(90deg, var(--neon-pink), var(--cyan));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      letter-spacing: 4px; text-shadow: 0 0 30px var(--glow-pink); text-decoration: none;
+      letter-spacing: 2px; text-shadow: 0 0 30px var(--glow-pink); text-decoration: none;
     }
     nav a {
       color: var(--accent); margin: 0 1rem; font-weight: 700; font-size: 1rem;
@@ -66,11 +67,11 @@
     nav a:hover::after { width: 100%; }
     .container { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
     .hero-title {
-      font-family: 'Orbitron', sans-serif; font-size: 3.2rem; font-weight: 900;
+      font-family: 'Orbitron', sans-serif; font-size: 2.5rem; font-weight: 900;
       background: linear-gradient(90deg, var(--neon-pink), white, var(--cyan));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       text-align: center; margin: 1.5rem 0 1rem; text-shadow: 0 0 50px var(--glow-pink);
-      letter-spacing: 3px; line-height: 1.2;
+      letter-spacing: 2px; line-height: 1.2;
     }
     .post-meta {
       text-align: center; color: var(--accent); font-size: 0.95rem; margin: 1rem 0 2rem;
@@ -85,19 +86,148 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.4); line-height: 1.9;
     }
     h2 {
-      font-family: 'Orbitron', sans-serif; font-size: 1.9rem; color: var(--neon-pink);
-      margin: 3rem 0 1.5rem; text-align: center; text-shadow: 0 0 25px var(--glow-pink);
-      letter-spacing: 2px; position: relative;
+      font-family: 'Orbitron', sans-serif; font-size: 1.7rem; color: var(--neon-pink);
+      margin: 3rem 0 1.5rem; text-shadow: 0 0 25px var(--glow-pink);
+      letter-spacing: 1px; position: relative; padding-bottom: 0.5rem;
     }
     h2::after {
-      content: ''; display: block; width: 80px; height: 4px; background: var(--cyan);
-      margin: 0.8rem auto; border-radius: 2px; box-shadow: 0 0 15px var(--glow-cyan);
+      content: ''; position: absolute; bottom: 0; left: 0; width: 60px; height: 4px; 
+      background: var(--cyan); border-radius: 2px; box-shadow: 0 0 15px var(--glow-cyan);
     }
+    .game-card {
+      background: var(--glass); border-radius: 15px; padding: 1.5rem;
+      margin-bottom: 2rem; backdrop-filter: blur(12px); box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1); transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .game-card:hover {
+      transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+    .game-number {
+      display: inline-block; background: var(--neon-pink); color: white;
+      width: 36px; height: 36px; border-radius: 50%; text-align: center;
+      line-height: 36px; font-weight: bold; margin-right: 1rem; 
+      box-shadow: 0 0 15px var(--glow-pink);
+    }
+    .content-wrapper {
+      display: grid; grid-template-columns: 1fr; gap: 2rem;
+    }
+    @media (min-width: 768px) {
+      .content-wrapper { grid-template-columns: 1fr 300px; }
+    }
+    .main-content { max-width: 100%; }
+    .sidebar {
+      background: var(--glass); border-radius: 15px; padding: 1.5rem;
+      backdrop-filter: blur(12px); box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1); height: fit-content;
+    }
+    .sidebar h3 {
+      font-family: 'Orbitron', sans-serif; color: var(--cyan); margin-bottom: 1rem;
+      font-size: 1.3rem; text-shadow: 0 0 15px var(--glow-cyan);
+    }
+    .sidebar ul { list-style: none; }
+    .sidebar li { margin-bottom: 0.8rem; }
+    .sidebar a {
+      color: var(--accent); text-decoration: none; transition: all 0.3s;
+      display: flex; align-items: center;
+    }
+    .sidebar a:hover { color: white; text-shadow: 0 0 10px var(--neon-pink); }
+    .sidebar a i { margin-right: 0.5rem; color: var(--cyan); }
+    .feature-list {
+      list-style: none; margin: 1.5rem 0;
+    }
+    .feature-list li {
+      margin-bottom: 1rem; padding-left: 1.5rem; position: relative;
+    }
+    .feature-list li::before {
+      content: '▸'; position: absolute; left: 0; color: var(--cyan);
+      text-shadow: 0 0 10px var(--glow-cyan);
+    }
+    .feature-list strong {
+      color: var(--cyan); display: block; margin-bottom: 0.3rem;
+    }
+    
+    /* Read More Section Styles */
+    .read-more-section {
+      margin-top: 4rem;
+      background: var(--glass);
+      border-radius: 15px;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .read-more-section h2 {
+      text-align: center;
+    }
+    .read-more-section h2::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .read-more-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .read-more-card {
+      background: rgba(11,11,31,0.7);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .read-more-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+    .read-more-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 2px solid var(--neon-pink);
+    }
+    .read-more-content {
+      padding: 1.5rem;
+    }
+    .read-more-title {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--cyan);
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 0 15px var(--glow-cyan);
+    }
+    .read-more-excerpt {
+      color: var(--text);
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .read-more-link {
+      display: inline-block;
+      color: var(--neon-pink);
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+      border: 1px solid var(--neon-pink);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+    .read-more-link:hover {
+      background: var(--neon-pink);
+      color: white;
+      text-shadow: 0 0 10px white;
+      box-shadow: 0 0 15px var(--glow-pink);
+    }
+    
     footer {
       background: rgba(11,11,31,0.98); padding: 3rem 0; margin-top: 5rem;
       border-top: 4px solid var(--neon-pink); text-align: center;
     }
     footer p { color: var(--accent); font-size: 0.9rem; }
+    footer a { color: var(--cyan); text-decoration: none; transition: all 0.3s; }
+    footer a:hover { text-shadow: 0 0 10px var(--glow-cyan); }
   </style>
 </head>
 <body>
@@ -112,8 +242,6 @@
         <a href="/contact">Contact</a>
       </nav>
     </div>
-    <!-- Image for the header section -->
-    <img src="https://mobilegamerhub.online/images/top-mobile-games-header.jpg" alt="Top Mobile Games 2025" />
   </header>
 
   <div class="container">
@@ -125,48 +253,113 @@
       <div class="meta-item"><i class="fas fa-tags"></i> Mobile Games, Top Games, 2025</div>
     </div>
 
-    <p class="intro">
-      Mobile gaming continues to dominate the entertainment scene in 2025, with new and old games attracting millions of players worldwide. Here are the top games that have captured the hearts of players in 2025.
-    </p>
+    <div class="content-wrapper">
+      <div class="main-content">
+        <p class="intro">
+          Mobile gaming continues to dominate the entertainment scene in 2025, with new and old games attracting millions of players worldwide. Here are the top games that have captured the hearts of players in 2025.
+        </p>
 
-    <h2>1. Candy Crush Saga – A Timeless Classic</h2>
-    <p>Candy Crush Saga continues to dominate the charts even after years of being released. Its simple yet addictive match-three mechanics and frequent updates keep players engaged. Whether you're playing to beat your high score or enjoying new challenges, Candy Crush remains one of the top mobile games to this day.</p>
+        <div class="game-card">
+          <h2><span class="game-number">1</span>Candy Crush Saga – A Timeless Classic</h2>
+          <p>Candy Crush Saga continues to dominate the charts even after years of being released. Its simple yet addictive match-three mechanics and frequent updates keep players engaged. Whether you're playing to beat your high score or enjoying new challenges, Candy Crush remains one of the top mobile games to this day.</p>
+        </div>
 
-    <h2>2. PUBG Mobile – A Battle Royale Phenomenon</h2>
-    <p>PUBG Mobile has solidified its position as one of the leading battle royale games for mobile. With its fast-paced gameplay, immersive graphics, and exciting survival challenges, it’s no surprise that PUBG Mobile consistently ranks among the most downloaded games. Players battle it out for survival, offering thrilling action and intense competition.</p>
+        <div class="game-card">
+          <h2><span class="game-number">2</span>PUBG Mobile – A Battle Royale Phenomenon</h2>
+          <p>PUBG Mobile has solidified its position as one of the leading battle royale games for mobile. With its fast-paced gameplay, immersive graphics, and exciting survival challenges, it's no surprise that PUBG Mobile consistently ranks among the most downloaded games. Players battle it out for survival, offering thrilling action and intense competition.</p>
+        </div>
 
-    <h2>3. Subway Surfers – A Nostalgic Favorite</h2>
-    <p>Subway Surfers continues to attract millions of players worldwide. Its simple endless-runner mechanics, vibrant visuals, and fun characters make it a beloved game for mobile users. Its ease of play makes it perfect for short gaming sessions, and the fun never gets old.</p>
+        <div class="game-card">
+          <h2><span class="game-number">3</span>Subway Surfers – A Nostalgic Favorite</h2>
+          <p>Subway Surfers continues to attract millions of players worldwide. Its simple endless-runner mechanics, vibrant visuals, and fun characters make it a beloved game for mobile users. Its ease of play makes it perfect for short gaming sessions, and the fun never gets old.</p>
+        </div>
 
-    <h2>4. Among Us – A Social Gaming Experience</h2>
-    <p>Among Us took the mobile gaming world by storm with its unique concept of social deduction and teamwork. Players must complete tasks while trying to identify the imposter in the group. This multiplayer game thrives on interaction, making it a favorite for friends and families looking for a fun and engaging social experience.</p>
+        <div class="game-card">
+          <h2><span class="game-number">4</span>Among Us – A Social Gaming Experience</h2>
+          <p>Among Us took the mobile gaming world by storm with its unique concept of social deduction and teamwork. Players must complete tasks while trying to identify the imposter in the group. This multiplayer game thrives on interaction, making it a favorite for friends and families looking for a fun and engaging social experience.</p>
+        </div>
 
-    <h2>5. Clash of Clans – Strategy and Warfare at Your Fingertips</h2>
-    <p>Clash of Clans continues to be one of the most popular strategy games in mobile gaming. Players build their villages, train armies, and battle other clans in a quest for dominance. Its mix of strategic planning, resource management, and competitive warfare keeps players hooked for hours.</p>
+        <div class="game-card">
+          <h2><span class="game-number">5</span>Clash of Clans – Strategy and Warfare at Your Fingertips</h2>
+          <p>Clash of Clans continues to be one of the most popular strategy games in mobile gaming. Players build their villages, train armies, and battle other clans in a quest for dominance. Its mix of strategic planning, resource management, and competitive warfare keeps players hooked for hours.</p>
+        </div>
 
-    <h2>6. Call of Duty: Mobile – The Ultimate FPS Experience</h2>
-    <p>For fans of first-person shooters, Call of Duty: Mobile offers a comprehensive and action-packed experience. Featuring multiple game modes, including classic multiplayer and the popular battle royale mode, it’s no surprise this game remains one of the top downloads. The game’s high-quality graphics, smooth controls, and immersive experience make it a standout among mobile shooters.</p>
+        <div class="game-card">
+          <h2><span class="game-number">6</span>Call of Duty: Mobile – The Ultimate FPS Experience</h2>
+          <p>For fans of first-person shooters, Call of Duty: Mobile offers a comprehensive and action-packed experience. Featuring multiple game modes, including classic multiplayer and the popular battle royale mode, it's no surprise this game remains one of the top downloads. The game's high-quality graphics, smooth controls, and immersive experience make it a standout among mobile shooters.</p>
+        </div>
 
-    <h2>7. Roblox – A Game Creation Platform Like No Other</h2>
-    <p>Roblox is more than just a game—it’s an entire platform that allows players to create their own games and experiences. Its open-ended nature has made it one of the most downloaded apps, especially among younger audiences. Whether you're creating, sharing, or playing games, Roblox offers endless possibilities for fun and creativity.</p>
+        <div class="game-card">
+          <h2><span class="game-number">7</span>Roblox – A Game Creation Platform Like No Other</h2>
+          <p>Roblox is more than just a game—it's an entire platform that allows players to create their own games and experiences. Its open-ended nature has made it one of the most downloaded apps, especially among younger audiences. Whether you're creating, sharing, or playing games, Roblox offers endless possibilities for fun and creativity.</p>
+        </div>
 
-    <h2>8. Pokemon GO – Augmented Reality at Its Best</h2>
-    <p>Pokemon GO revolutionized mobile gaming with its innovative use of augmented reality. Players venture into the real world to capture virtual Pokémon, offering an immersive gaming experience like no other. Regular events and updates keep the game fresh, making it a must-download for fans of the franchise and newcomers alike.</p>
+        <div class="game-card">
+          <h2><span class="game-number">8</span>Pokemon GO – Augmented Reality at Its Best</h2>
+          <p>Pokemon GO revolutionized mobile gaming with its innovative use of augmented reality. Players venture into the real world to capture virtual Pokémon, offering an immersive gaming experience like no other. Regular events and updates keep the game fresh, making it a must-download for fans of the franchise and newcomers alike.</p>
+        </div>
 
-    <h2>Why These Games Are So Popular</h2>
-    <p>So, what makes these games stand out in a crowded market? Several factors contribute to their success:</p>
-    <ul>
-      <li><strong></strong> These games offer a perfect balance of challenge and reward, which keeps players coming back for more.</li>
-      <li><strong></strong> New levels, characters, and modes keep the games fresh and exciting for players.</li>
-      <li><strong></strong> Many of the games include multiplayer elements, helping players connect and compete with friends.</li>
-      <li><strong></strong> Games like PUBG Mobile and Call of Duty: Mobile allow players to team up regardless of their device.</li>
-    </ul>
+        <div class="game-card">
+          <h2>Why These Games Are So Popular</h2>
+          <p>So, what makes these games stand out in a crowded market? Several factors contribute to their success:</p>
+          <ul class="feature-list">
+            <li><strong>Addictive Gameplay</strong> These games offer a perfect balance of challenge and reward, which keeps players coming back for more.</li>
+            <li><strong>Regular Updates</strong> New levels, characters, and modes keep the games fresh and exciting for players.</li>
+            <li><strong>Social Elements</strong> Many of the games include multiplayer elements, helping players connect and compete with friends.</li>
+            <li><strong>Cross-Platform Play</strong> Games like PUBG Mobile and Call of Duty: Mobile allow players to team up regardless of their device.</li>
+          </ul>
+        </div>
 
-    <h2>The Future of Mobile Gaming</h2>
-    <p>As technology continues to evolve, mobile gaming is set to get even better. With advancements in 5G, more powerful smartphones, and new augmented reality and virtual reality experiences, the future of mobile gaming is incredibly exciting.</p>
+        <div class="game-card">
+          <h2>The Future of Mobile Gaming</h2>
+          <p>As technology continues to evolve, mobile gaming is set to get even better. With advancements in 5G, more powerful smartphones, and new augmented reality and virtual reality experiences, the future of mobile gaming is incredibly exciting.</p>
+        </div>
+
+        <!-- Read More Section -->
+        <div class="read-more-section">
+          <h2>Read More From Mobile Gamer Hub</h2>
+          <p style="text-align: center; margin-bottom: 1.5rem;">Check out our latest article on premium mobile games:</p>
+          
+          <div class="read-more-grid">
+            <div class="read-more-card">
+              <img src="https://mobilegamerhub.online/images/best-premium-mobile-games-2025.jpg" alt="Best Premium Mobile Games 2025" class="read-more-image">
+              <div class="read-more-content">
+                <h3 class="read-more-title">Best Premium Mobile Games of 2025: Top Paid Titles for Android and iOS</h3>
+                <p class="read-more-excerpt">Are you searching for the best premium mobile games in 2025? This year, developers are pushing boundaries, delivering paid mobile games with console-quality graphics and deep stories—no ads, no paywalls, just pure gaming. Here are the must-play titles that top every gamer's wishlist.</p>
+                <a href="https://mobilegamerhub.online/blog/best-premium-mobile-games-2025.html" class="read-more-link">Read Article</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <h3>Popular Categories</h3>
+        <ul>
+          <li><a href="#"><i class="fas fa-gamepad"></i> Action Games</a></li>
+          <li><a href="#"><i class="fas fa-chess"></i> Strategy Games</a></li>
+          <li><a href="#"><i class="fas fa-puzzle-piece"></i> Puzzle Games</a></li>
+          <li><a href="#"><i class="fas fa-users"></i> Multiplayer Games</a></li>
+          <li><a href="#"><i class="fas fa-vr-cardboard"></i> AR/VR Games</a></li>
+        </ul>
+        
+        <h3>Trending Now</h3>
+        <ul>
+          <li><a href="#"><i class="fas fa-fire"></i> Upcoming Games 2025</a></li>
+          <li><a href="#"><i class="fas fa-mobile-alt"></i> Best Gaming Phones</a></li>
+          <li><a href="#"><i class="fas fa-trophy"></i> Esports Tournaments</a></li>
+          <li><a href="#"><i class="fas fa-download"></i> Free Game Deals</a></li>
+        </ul>
+        
+        <h3>Latest Articles</h3>
+        <ul>
+          <li><a href="https://mobilegamerhub.online/blog/best-premium-mobile-games-2025.html"><i class="fas fa-star"></i> Best Premium Games 2025</a></li>
+        </ul>
+      </div>
+    </div>
 
     <footer>
-      <p>© 2025 Mobile Gamer Hub. All rights reserved. | <a href="/privacy" style="color:var(--cyan);">Privacy Policy</a></p>
+      <p>© 2025 Mobile Gamer Hub. All rights reserved. | <a href="/privacy">Privacy Policy</a></p>
     </footer>
   </div>
 </body>
